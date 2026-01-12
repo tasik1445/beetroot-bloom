@@ -43,7 +43,7 @@ const HeroSection = () => {
             <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary leading-tight mb-4">
               প্রাকৃতিক শক্তি ও সুস্বাস্থ্যের জন্য
               <br />
-              <span className="text-secondary">100% জৈব বিটরুট পাউডার</span>
+              <span className="text-secondary">100% অর্গানিক বিটরুট পাউডার</span>
             </h1>
             
             {/* English Subline */}
