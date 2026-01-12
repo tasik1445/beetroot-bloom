@@ -2,95 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Organic Wellness Design System - Beetroot Powder Landing Page
+   Color palette: Earthy, warm, and calming wellness aesthetic
+   All colors MUST be HSL
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Primary: Deep Burgundy/Beetroot Red */
+    --primary: 345 75% 31%;
+    --primary-foreground: 40 33% 96%;
+    
+    /* Secondary: Warm Terracotta */
+    --secondary: 18 50% 63%;
+    --secondary-foreground: 40 33% 96%;
+    
+    /* Accent: Fresh Sage Green */
+    --accent: 105 15% 58%;
+    --accent-foreground: 25 18% 20%;
+    
+    /* Background: Soft Cream/Beige */
+    --background: 40 33% 97%;
+    --foreground: 25 18% 20%;
+    
+    /* Card/Surface: Warm White */
+    --card: 40 40% 98%;
+    --card-foreground: 25 18% 20%;
+    
+    /* Popover */
+    --popover: 40 40% 98%;
+    --popover-foreground: 25 18% 20%;
+    
+    /* Muted: Light Sand */
+    --muted: 35 25% 92%;
+    --muted-foreground: 25 10% 45%;
+    
+    /* Destructive/Urgency: Bright Red */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders */
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 345 75% 31%;
+    
+    /* Border Radius */
+    --radius: 0.75rem;
+    
+    /* Custom Colors */
+    --cream-light: 40 33% 97%;
+    --cream-warm: 40 45% 95%;
+    --terracotta: 18 50% 63%;
+    --terracotta-light: 18 60% 95%;
+    --sage: 105 15% 58%;
+    --sage-light: 105 25% 94%;
+    --burgundy: 345 75% 31%;
+    --burgundy-dark: 345 80% 25%;
+    --gold: 45 100% 50%;
+    --charcoal: 25 18% 20%;
+    
+    /* Gradients */
+    --gradient-cta: linear-gradient(135deg, hsl(18 50% 63%) 0%, hsl(18 45% 58%) 100%);
+    --gradient-cta-hover: linear-gradient(135deg, hsl(345 75% 31%) 0%, hsl(18 50% 63%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 69% 45%) 0%, hsl(142 76% 36%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px rgba(61, 48, 40, 0.08);
+    --shadow-card: 0 6px 30px rgba(61, 48, 40, 0.08);
+    --shadow-lifted: 0 12px 40px rgba(61, 48, 40, 0.12);
+    --shadow-cta: 0 8px 24px rgba(212, 129, 109, 0.35);
+    --shadow-cta-hover: 0 12px 32px rgba(212, 129, 109, 0.45);
+    --shadow-burgundy: 0 10px 40px rgba(139, 21, 56, 0.15);
+    
+    /* Sidebar */
+    --sidebar-background: 40 33% 97%;
+    --sidebar-foreground: 25 18% 20%;
+    --sidebar-primary: 345 75% 31%;
+    --sidebar-primary-foreground: 40 33% 96%;
+    --sidebar-accent: 35 25% 92%;
+    --sidebar-accent-foreground: 25 18% 20%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 345 75% 31%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --primary: 345 70% 45%;
+    --primary-foreground: 40 33% 96%;
+    --secondary: 18 45% 55%;
+    --secondary-foreground: 40 33% 96%;
+    --accent: 105 20% 50%;
+    --accent-foreground: 40 33% 96%;
+    --background: 25 15% 10%;
+    --foreground: 40 33% 96%;
+    --card: 25 15% 12%;
+    --card-foreground: 40 33% 96%;
+    --popover: 25 15% 12%;
+    --popover-foreground: 40 33% 96%;
+    --muted: 25 15% 18%;
+    --muted-foreground: 35 15% 65%;
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 345 70% 45%;
+    --sidebar-background: 25 15% 10%;
+    --sidebar-foreground: 40 33% 96%;
+    --sidebar-primary: 345 70% 45%;
+    --sidebar-primary-foreground: 40 33% 96%;
+    --sidebar-accent: 25 15% 18%;
+    --sidebar-accent-foreground: 40 33% 96%;
+    --sidebar-border: 25 15% 20%;
+    --sidebar-ring: 345 70% 45%;
   }
 }
 
@@ -99,7 +119,234 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Hero Button Variant */
+  .btn-hero {
+    @apply inline-flex items-center justify-center gap-2 px-10 py-5 text-lg font-bold rounded-full text-white transition-all duration-300;
+    background: var(--gradient-cta);
+    box-shadow: var(--shadow-cta);
+  }
+  
+  .btn-hero:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-cta-hover);
+    background: var(--gradient-cta-hover);
+  }
+
+  /* Success Button Variant */
+  .btn-success {
+    @apply inline-flex items-center justify-center gap-2 px-12 py-5 text-xl font-bold rounded-full text-white transition-all duration-300;
+    background: var(--gradient-success);
+    box-shadow: 0 8px 32px rgba(76, 175, 80, 0.4);
+  }
+  
+  .btn-success:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(76, 175, 80, 0.5);
+  }
+  
+  .btn-success:disabled {
+    @apply opacity-50 cursor-not-allowed;
+    transform: none;
+  }
+
+  /* Card Styles */
+  .card-organic {
+    @apply bg-card rounded-2xl p-8 transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-organic:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lifted);
+  }
+
+  /* Pain Point Card */
+  .card-pain {
+    @apply bg-white rounded-2xl p-8 border-l-4 border-secondary transition-all duration-300;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .card-pain:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Testimonial Card */
+  .card-testimonial {
+    @apply bg-white rounded-2xl p-8 border-t-4 border-secondary transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-testimonial:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lifted);
+  }
+
+  /* Trust Badge */
+  .badge-trust {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold;
+    background: hsl(var(--sage-light));
+    color: hsl(var(--charcoal));
+  }
+
+  /* Package Card */
+  .package-card {
+    @apply relative p-6 rounded-xl border-2 transition-all duration-300 cursor-pointer;
+  }
+  
+  .package-card.selected {
+    @apply border-secondary;
+    background: hsl(var(--terracotta-light));
+  }
+  
+  .package-card:not(.selected) {
+    @apply border-border hover:border-secondary/50;
+  }
+
+  /* Bonus Card */
+  .bonus-card {
+    @apply p-5 rounded-xl border-l-4 border-accent;
+    background: hsl(var(--sage-light));
+  }
+
+  /* Form Input */
+  .input-organic {
+    @apply w-full px-4 py-4 text-base rounded-lg border-2 border-border transition-all duration-200 bg-white;
+  }
+  
+  .input-organic:focus {
+    @apply outline-none border-secondary ring-2 ring-secondary/20;
+  }
+  
+  .input-organic.error {
+    @apply border-destructive ring-2 ring-destructive/20;
+  }
+  
+  .input-organic.valid {
+    @apply border-accent;
+  }
+
+  /* Guarantee Box */
+  .guarantee-box {
+    @apply p-10 rounded-2xl text-center;
+    background: hsl(var(--terracotta-light));
+    border: 3px solid hsl(var(--secondary));
+  }
+
+  /* Value Stack Box */
+  .value-stack-box {
+    @apply p-8 rounded-2xl text-center text-white;
+    background: hsl(var(--burgundy));
+  }
+
+  /* Floating Product Animation */
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Pulse CTA Animation */
+  .pulse-cta {
+    animation: pulseCta 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseCta {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+
+  /* Bounce Arrow Animation */
+  .bounce-arrow {
+    animation: bounceArrow 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes bounceArrow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  /* Fade In Animation */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Urgency Pulse */
+  .urgency-pulse {
+    animation: urgencyPulse 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes urgencyPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* Checkmark Icon */
+  .checkmark {
+    @apply inline-flex items-center justify-center w-7 h-7 rounded-full text-white text-sm font-bold flex-shrink-0;
+    background: hsl(var(--sage));
+  }
+
+  /* Section Padding */
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24 px-4 md:px-6;
+  }
+
+  /* Container */
+  .container-organic {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Sticky Mobile CTA */
+  .sticky-mobile-cta {
+    @apply fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-border z-50 md:hidden;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* WhatsApp Button */
+  .whatsapp-float {
+    @apply fixed bottom-20 md:bottom-6 right-4 md:right-6 w-14 h-14 rounded-full flex items-center justify-center text-white z-50 transition-transform duration-300 hover:scale-110;
+    background: #25D366;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+}
+
+@layer utilities {
+  /* Text Gradient */
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  }
+
+  /* Organic Background Patterns */
+  .bg-organic-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B9D83' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 }
