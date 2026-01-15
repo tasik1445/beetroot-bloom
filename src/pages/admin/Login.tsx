@@ -8,10 +8,12 @@ import { useToast } from '@/hooks/use-toast';
 import { Loader2, Lock, Mail } from 'lucide-react';
 
 const AdminLogin = () => {
+  const [mode, setMode] = useState<'signin' | 'signup'>('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { signIn } = useAuth();
+
+  const { signIn, signUp } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -19,21 +21,44 @@ const AdminLogin = () => {
     e.preventDefault();
     setIsLoading(true);
 
+    if (mode === 'signup') {
+      const { error } = await signUp(email, password);
+
+      if (error) {
+        toast({
+          title: 'Sign up failed',
+          description: error.message,
+          variant: 'destructive',
+        });
+        setIsLoading(false);
+        return;
+      }
+
+      toast({
+        title: 'Account created',
+        description: 'Now sign in. After that, we will grant your admin role.',
+      });
+
+      setMode('signin');
+      setIsLoading(false);
+      return;
+    }
+
     const { error } = await signIn(email, password);
 
     if (error) {
       toast({
-        title: "Login Failed",
+        title: 'Login Failed',
         description: error.message,
-        variant: "destructive",
+        variant: 'destructive',
       });
       setIsLoading(false);
       return;
     }
 
     toast({
-      title: "Login Successful",
-      description: "Welcome to the admin panel!",
+      title: 'Login Successful',
+      description: 'Welcome to the admin panel!',
     });
     navigate('/admin');
   };
@@ -46,9 +71,13 @@ const AdminLogin = () => {
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Lock className="h-8 w-8 text-primary" />
             </div>
-            <h1 className="text-2xl font-bold text-foreground">Admin Login</h1>
+            <h1 className="text-2xl font-bold text-foreground">
+              {mode === 'signin' ? 'Admin Login' : 'Create Admin Account'}
+            </h1>
             <p className="text-muted-foreground mt-2">
-              Sign in to access the admin panel
+              {mode === 'signin'
+                ? 'Sign in to access the admin panel'
+                : 'Create an account first, then we will grant admin access'}
             </p>
           </div>
 
@@ -89,12 +118,28 @@ const AdminLogin = () => {
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Signing in...
+                  {mode === 'signin' ? 'Signing in...' : 'Creating account...'}
                 </>
-              ) : (
+              ) : mode === 'signin' ? (
                 'Sign In'
+              ) : (
+                'Create Account'
               )}
             </Button>
+
+            <div className="text-center">
+              <Button
+                type="button"
+                variant="link"
+                className="px-0 text-muted-foreground"
+                onClick={() => setMode((m) => (m === 'signin' ? 'signup' : 'signin'))}
+                disabled={isLoading}
+              >
+                {mode === 'signin'
+                  ? "Don't have an account? Create one"
+                  : 'Already have an account? Sign in'}
+              </Button>
+            </div>
           </form>
 
           <div className="mt-6 text-center">
