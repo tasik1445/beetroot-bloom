@@ -12,7 +12,6 @@ import SolutionSection from '@/components/SolutionSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import OfferSection from '@/components/OfferSection';
 import CheckoutSection from '@/components/CheckoutSection';
-import Navbar from '@/components/Navbar';
 import { MessageCircle } from 'lucide-react';
 
 const Index = () => {
@@ -22,22 +21,11 @@ const Index = () => {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
-      <div id="hero">
-        <HeroSection />
-      </div>
-      <div id="problem">
-        <ProblemSection />
-      </div>
-      <div id="solution">
-        <SolutionSection />
-      </div>
-      <div id="testimonials">
-        <TestimonialsSection />
-      </div>
-      <div id="offer">
-        <OfferSection />
-      </div>
+      <HeroSection />
+      <ProblemSection />
+      <SolutionSection />
+      <TestimonialsSection />
+      <OfferSection />
       <CheckoutSection />
 
       {/* Sticky Mobile CTA */}
